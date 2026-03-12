@@ -1,0 +1,56 @@
+body{
+font-family: Arial;
+margin:0;
+}
+
+header{
+background:#0004d9;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+nav a{
+color:rgb(0, 0, 0);
+margin:10px;
+text-decoration:none;
+}
+
+.container{
+display:flex;
+justify-content:center;
+gap:20px;
+padding:20px;
+}
+
+.box{
+padding:20px;
+border:1px solid rgb(247, 244, 244);
+animation: fade 2s;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+table{
+margin:20px auto;
+border-collapse:collapse;
+}
+
+th,td{
+padding:10px;
+}
+
+footer{
+text-align:center;
+padding:10px;
+background:#e2dbdb;
+}
+
+@media(max-width:600px){
+.container{
+flex-direction:column;
+}
+}
