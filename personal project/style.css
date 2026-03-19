@@ -1,56 +1,165 @@
-body{
-font-family: Arial;
-margin:0;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+
+ 
+  background: url("bg.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
-header{
-background:#0004d9;
-color:white;
-text-align:center;
-padding:15px;
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* subtle dark overlay */
+  z-index: -1;
 }
 
-nav a{
-color:rgb(0, 0, 0);
-margin:10px;
-text-decoration:none;
+
+header {
+  background: linear-gradient(90deg, #0004d9, #0002a0);
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-.container{
-display:flex;
-justify-content:center;
-gap:20px;
-padding:20px;
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.box{
-padding:20px;
-border:1px solid rgb(247, 244, 244);
-animation: fade 2s;
+nav a:hover {
+  text-decoration: underline;
 }
 
-@keyframes fade{
-from{opacity:0;}
-to{opacity:1;}
+
+.container,
+section,
+.contact-container {
+  background: rgba(255, 255, 255, 0.9); /* semi-transparent for readability */
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 1000px;
 }
 
-table{
-margin:20px auto;
-border-collapse:collapse;
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-th,td{
-padding:10px;
+
+.box {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fade 1.5s;
 }
 
-footer{
-text-align:center;
-padding:10px;
-background:#e2dbdb;
+
+.bike-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-@media(max-width:600px){
-.container{
-flex-direction:column;
+.bike-table th,
+.bike-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
 }
+
+.bike-table th {
+  background-color: #222;
+  color: white;
+}
+
+.bike-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.bike-table tr:hover {
+  background-color: #ddd;
+}
+
+.bike-table img {
+  width: 120px;
+  border-radius: 8px;
+}
+
+
+.contact-box {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-info,
+.contact-form {
+  background: rgba(255,255,255,0.95);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background: #0004d9;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background: #0003aa;
+}
+
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255,255,255,0.9);
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
 }
